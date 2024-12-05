@@ -1,0 +1,232 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
+    background-color: #3F47CC; /* Ubah latar belakang halaman menjadi biru */
+    color: #ffffff;
+    margin: 0;
+    padding-top: 80px; /* Memberikan ruang untuk header */
+}
+
+.header {
+    background-color: #0909a9; /* Warna latar belakang header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan bawah header */
+    position: fixed; /* Menempel di atas */
+    top: 0; /* Menempel di atas */
+    left: 0; /* Mengatur posisi kiri */
+    right: 0; /* Mengatur posisi kanan */
+    z-index: 1000; /* Memastikan header berada di atas elemen lain */
+    height: 75px; /* Tinggi header */
+}
+
+.profile-container {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Vertikal center */
+    height: 75px; /* Tinggi sama dengan header */
+    margin-left: auto; /* Mengatur margin kiri otomatis untuk mendorong ke kanan */
+}
+
+.dropdown-toggle {
+    border: none; /* Menghilangkan border default */
+    background-color: transparent; /* Latar belakang transparan */
+    color: white; /* Warna teks */
+    padding: 10px 15px; /* Padding untuk tombol */
+}
+
+.dropdown-menu {
+    right: 0; /* Mengatur dropdown muncul di sebelah kanan */
+}
+
+.sidebar {
+    height: calc(100vh - 75px); /* Tinggi sidebar sesuai dengan tinggi jendela - tinggi header */
+    position: fixed; /* Sidebar tetap di posisi tetap */
+    top: 75px; /* Menempatkan sidebar di bawah header */
+    left: 0; /* Mengatur posisi kiri */
+    width: 200px; /* Lebar sidebar */
+    padding: 20px; /* Padding di dalam sidebar */
+    background-color: #add8e6; /* Warna latar belakang sidebar */
+    border-top: 2px solid #97c6f8; /* Border atas untuk efek kotak */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+    z-index: 1000; /* Memastikan sidebar di atas konten */
+}
+
+.sidebar.collapsed {
+    left: -100px; /* Geser keluar layar saat kolaps */
+}
+
+.sidebar h4 {
+    margin-bottom: 20px; /* Jarak bawah untuk judul */
+}
+
+.sidebar ul {
+    flex-grow: 1; /* Membuat daftar tumbuh untuk mengisi ruang yang tersisa */
+}
+
+.sidebar a {
+    display: block; /* Mengubah tautan menjadi blok untuk kotak */
+    padding: 10px; /* Padding dalam kotak */
+    margin-bottom: 10px; /* Jarak antar kotak */
+    border-radius: 5px; /* Sudut membulat */
+    background-color: white; /* Warna latar belakang kotak */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    color: #343a40; /* Warna teks gelap */
+    transition: color 0.3s, background-color 0.3s; /* Transisi saat hover */
+}
+
+.sidebar a:hover {
+    background-color: #e7f1ff; /* Warna saat hover */
+}
+
+.sidebar a.active {
+    background-color: #28a745; /* Warna untuk tautan aktif (biru hijau) */
+    color: white; /* Warna teks untuk tautan aktif */
+}
+
+.custom-h1 {
+    color: white; /* Warna teks */
+    font-weight: bold; /* Ketebalan font */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+    text-align: center; /* Rata tengah */
+    margin-top: 20px; /* Jarak atas */
+    font-size: 2.5em; /* Ukuran font, sesuaikan sesuai kebutuhan */
+}
+
+.password-container {
+    position: relative; /* Membuat konteks posisi untuk ikon */
+    width: 100%; /* Pastikan lebar sama dengan input */
+}
+
+.password-container input {
+    width: 100%; /* Lebar input 100% */
+    padding: 10px 40px 10px 10px; /* Padding kanan lebih besar untuk memberi ruang pada ikon */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.main-container {
+    background-color: white; /* Warna latar belakang kontainer utama */
+    border-radius: 0.5rem; /* Sudut melengkung */
+    padding: 20px; /* Padding di dalam kontainer */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+.setting-container {
+    max-width: 400px;
+    margin: 20px auto; /* Margin atas dan bawah */
+    position: relative; /* Untuk positioning */
+    top: 80px; /* Menambahkan offset ke bawah untuk menghindari header */
+    left: -20px; /* Menggeser sedikit ke kiri, sesuaikan sesuai kebutuhan */
+}
+
+.container {
+    max-width: 100%; /* Atur lebar maksimum menjadi 100% */
+}
+.form-container {
+    max-width: 300px; /* Atur lebar maksimum kotak menjadi lebih kecil */
+    margin: auto; /* Pusatkan kotak */
+}
+
+.btn-custom {
+    width: 100%; /* Mengatur lebar tombol menjadi 100% dari kontainer */
+    margin-top: 20px; /* Jarak atas tombol */
+    margin-bottom: 20px; /* Jarak bawah tombol */
+    padding: 10px; /* Padding dalam tombol */
+    font-size: 16px; /* Ukuran font tombol */
+}
+
+h1 {
+    margin-bottom: 20px; /* Jarak bawah judul */
+    color: #343a40; /* Warna teks judul */
+}
+
+.card {
+    border: 1px solid #007bff; /* Border berwarna biru */
+}
+.card-header {
+    background-color: #007bff; /* Warna latar belakang header */
+    color: white; /* Warna teks header */
+}
+
+.btn-success {
+    background-color: #28a745; /* Warna hijau tombol */
+    border-color: #28a745; /* Border hijau tombol */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Warna abu-abu tombol */
+    border-color: #6c757d; /* Border abu-abu tombol */
+}
+
+.footer {
+    background-color: #f1f1f1; /* Warna latar belakang footer */
+    padding: 20px 0; /* Padding di dalam footer */
+    text-align: center; /* Memusatkan teks di footer */
+}
+
+.footer p {
+    margin: 0; /* Menghapus margin pada paragraf di footer */
+    color: #6c757d; /* Warna teks footer */
+}
+
+/* Gaya untuk tabel */
+.table {
+    width: 100%; /* Lebar tabel 100% dari kontainer */
+    border-collapse: collapse; /* Menghapus jarak antara sel */
+    margin-top: 20px; /* Jarak atas tabel */
+}
+
+.table th, .table td {
+    padding: 15px; /* Padding di dalam sel */
+    text-align: left; /* Rata kiri teks */
+    border: none; /* Menghapus garis batas */
+}
+
+/* Gaya untuk header tabel */
+.table thead th {
+    background-color: #007bff; /* Warna latar belakang header */
+    color: white; /* Warna teks header */
+}
+
+/* Gaya untuk baris tabel */
+.table tbody tr:nth-child(odd) {
+    background-color: #e7f3ff; /* Warna biru muda untuk baris ganjil */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Warna abu-abu putih untuk baris genap */
+}
+
+/* Gaya untuk hover pada baris tabel */
+.table tbody tr:hover {
+    background-color: #d1e7ff; /* Warna biru muda lebih gelap saat hover */
+}
+
+.content h1 {
+    color: #ffffff; /* Mengubah warna teks h1 menjadi putih */
+    font-weight: bold; /* Membuat teks menjadi tebal */
+}
+
+/* Gaya untuk label */
+.label-custom {
+    color: #000; /* Mengatur warna teks label menjadi hitam */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+footer {
+    background-color: #f8f9fa; /* Warna latar belakang footer */
+    padding: 20px; /* Padding footer */
+    text-align: center; /* Memusatkan teks */
+}
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 12px;
+
+    }
+}
+@media (max-width: 576px) {
+    .footer {
+        font-size: 10px;
+    }
+}
