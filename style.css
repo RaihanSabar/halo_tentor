@@ -1,0 +1,1331 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; /* Mengatur tinggi body menjadi 100% dari tinggi viewport */
+    background-color: #3F47CC; /* Ubah latar belakang halaman menjadi biru */
+    color: #ffffff; /* Ubah warna teks default menjadi putih */
+    width: 100;
+}
+
+.header {
+    position: fixed; /* Membuat header tetap di atas */
+    top: 0; /* Menempatkan header di bagian atas */
+    left: 0; /* Menempatkan header di sisi kiri */
+    width: 100%; /* Memastikan header mengambil lebar penuh */
+    background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang header tetap transparan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan untuk efek kedalaman */
+    z-index: 1000; /* Memastikan header berada di atas konten lainnya */
+    padding: 0 0; /* Tambahkan padding atas dan bawah */
+}
+
+.navbar-toggler {
+    border: none; /* Menghilangkan border pada tombol toggler */
+}
+
+.navbar-toggler-icon {
+    width: 30px; /* Lebar ikon */
+    height: 30px; /* Tinggi ikon */
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="black" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E'); /* Ikon hamburger */
+}
+
+.navbar-toggler-icon.x {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="black" stroke-width="2" d="M4 4l22 22M4 26l22-22"/%3E%3C/svg%3E'); /* Simbol X yang lebih simetris */
+}
+
+.navbar-brand img {
+    height: 75px; /* Menjaga rasio aspek */
+    width: auto; /* Memastikan logo responsif */
+    margin-left: 100px;
+}
+
+.whatsapp-button {
+    margin-right: 100px
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex; /* Pastikan navbar menggunakan flexbox */
+        justify-content: space-between; /* Memisahkan logo dan tombol */
+        align-items: center; /* Memastikan logo dan tombol berada di tengah secara vertikal */
+        padding: 5px 10px; /* Padding untuk navbar */
+    }
+
+    .navbar-nav {
+        text-align: left; /* Memusatkan teks pada navbar */
+        display: none; /* Sembunyikan navbar secara default */
+        flex-direction: column; /* Ubah arah menjadi kolom */
+        padding-left: 0px;
+        width: 100%; /* Pastikan navbar mengambil lebar penuh */
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0; /* Menghapus margin antar item navbar pada layar kecil */
+    }
+
+    .navbar-brand img {
+        height: 50px; /* Mengurangi ukuran logo pada layar kecil */
+        margin-left: 10px
+    }
+
+    .navbar-toggler {
+        margin-right: 10px; /* Tambahkan margin kanan untuk tombol toggler */
+    }
+ 
+    .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="black" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E'); /* Ikon hamburger */
+    }
+
+    .navbar-nav.show {
+        display: flex; /* Tampilkan navbar saat toggle */
+    }
+
+    .whatsapp-button {
+        margin-top: 10px; /* Tambahkan margin atas untuk tombol WhatsApp */
+        margin-left: 15px;
+    }
+}
+
+article {
+    margin-top: 25px; /* Jarak dari atas layar */
+    width: 100%;
+}
+
+article, section {
+    padding-top: 70px; /* Jarak dari atas untuk menghindari tertutup header */
+    width: 100%;
+    margin: 0; /* Menghapus margin untuk menghindari potongan */
+    padding-left: 0; /* Menghapus padding kiri */
+    padding-right: 0; /* Menghapus padding kanan */
+}
+
+.navbar {
+    padding: 15px 0; /* Padding untuk navbar */
+}
+
+.navbar-brand {
+    margin-left: 0cm; /* Jarak dari kiri untuk logo */
+}
+
+.navbar-dark {
+    background-color: #003366; /* Ganti dengan warna biru tua yang diinginkan */
+    color: white; /* Ganti warna teks jika perlu */
+}
+
+
+.navbar-nav {
+    display: flex; /* Menggunakan flexbox untuk navbar */
+    justify-content: center; /* Memusatkan item navbar */
+    flex-grow: 1; /* Memungkinkan navbar untuk tumbuh dan mengisi ruang */
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px; /* Jarak antar item navbar */
+}
+
+.navbar-nav .a {
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.navbar-nav .nav-link {
+    color: rgb(0, 0, 0); /* Warna teks navbar */
+    font-size: 1.2rem; /* Ukuran huruf navbar */
+    font-weight: bold; /* Membuat huruf menjadi bold */
+    transition: color 0.3s; /* Transisi untuk hover */
+    display: inline-block; /* Mengubah menjadi inline-block untuk garis bawah */
+    position: relative; /* Memungkinkan posisi relatif untuk garis bawah */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3F47CC; /* Warna ungu saat hover */
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold; /* Menjadikan teks lebih tebal */
+    color: #3F47CC; /* Warna teks aktif tetap biru */
+}
+
+.navbar-nav .nav-link.active::after {
+    content: ''; /* Membuat elemen pseudo untuk garis bawah */
+    position: absolute; /* Memposisikan garis bawah */
+    left: 0; /* Memposisikan di kiri */
+    right: 0; /* Memposisikan di kanan */
+    bottom: 0px; /* Jarak dari bawah teks */
+    height: 2px; /* Tinggi garis bawah */
+    background-color: blue; /* Warna garis bawah */
+    width: 100%; /* Lebar garis bawah */
+}
+
+.hero {
+    background: #3F47CC;
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto; /* Memusatkan hero di tengah */
+    flex-direction: row; /* Pastikan elemen berada dalam satu baris */
+}
+
+.hero-content {
+    position: absolute;
+    width: 33.33%; /* Lebar konten 1/3 dari layar */
+    text-align: left;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.cta-button-hero {
+    background-color: #00c853; /* Warna tombol CTA */
+    color: #fff; /* Warna teks tombol */
+    font-weight: 600; /* Menambah ketebalan huruf */
+    padding: 10px 15px; /* Padding untuk tombol */
+    border-radius: 5px; /* Sudut melengkung */
+    text-decoration: none; /* Menghapus garis bawah */
+    display: inline-block; /* Agar tombol tidak mengambil seluruh lebar */
+    font-size: 18px; /* Ukuran font tombol yang lebih besar */
+    margin-left: 0; /* Menghapus margin kiri untuk menempel ke kiri */
+    position: relative; /* Memungkinkan kontrol posisi lebih lanjut jika diperlukan */
+    right: 165px; /* Menempel ke sisi kiri */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .cta-button-hero {
+        font-size: 16px; /* Ukuran font tombol lebih kecil */
+        padding: 8px 12px; /* Mengurangi padding untuk tombol */
+        margin-top: 0px; /* Jarak dari teks di atas */
+        margin-left: 100px;
+        width: max-content;
+    }
+}
+
+@media (max-width: 576px) {
+    .cta-button-hero {
+        font-size: 14px; /* Ukuran font tombol lebih kecil untuk ponsel sangat kecil */
+        font-weight: bold;
+        padding: 8px 10px; /* Mengurangi padding untuk tombol */
+        margin-top: 0px; /* Jarak dari teks di atas */
+        margin-left: 165px;
+        width: max-content;
+    }
+}
+
+.cta-button-hero:hover {
+    background-color: #218838; /* Warna tombol saat hover */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh; /* Atur tinggi hero menjadi 80% dari tinggi viewport */
+    }
+
+    .hero-content {
+        width: 90%; /* Lebar konten menjadi 90% */
+        padding: 10px; /* Mengurangi padding untuk konten */
+        margin-left: 30px;
+    }
+
+    .hero h1 {
+        font-size: 16px; /* Ukuran font h1 lebih kecil */
+        font-weight: bolder;
+    }
+
+    .hero p {
+        font-size: 12px; /* Ukuran font p lebih kecil */
+    }
+
+    .cta-button {
+        font-size: 14px; /* Ukuran font tombol lebih kecil */
+        padding: 8px 16px; /* Mengurangi padding tombol */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 16px; /* Ukuran font h1 lebih kecil untuk ponsel sangat kecil */
+        font-weight: bolder;
+    }
+
+    .hero p {
+        font-size: 12px; /* Ukuran font p lebih kecil untuk ponsel sangat kecil */
+    }
+
+    .cta-button {
+        font-size: 12px; /* Ukuran font tombol lebih kecil untuk ponsel sangat kecil */
+        padding: 5px 10px; /* Mengurangi padding tombol */
+    }
+}
+
+.hero::before {
+    content: ""; /* Membuat elemen kosong */
+    position: absolute; /* Memposisikan overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi */
+    z-index: 1; /* Menempatkan overlay di atas gambar */
+}
+
+.hero-slides {
+    position: absolute; /* Posisikan slides secara absolut */
+    top: 0; /* Atur posisi atas */
+    left: 0; /* Atur posisi kiri */
+    width: 100%; /* Pastikan lebar 100% */
+    height: 100%; /* Pastikan tinggi 100% */
+}
+
+.hero-slide {
+    display: none; /* Sembunyikan semua slide */
+    width: 100%; /* Pastikan lebar 100% */
+    height: 100%; /* Pastikan tinggi 100% */
+    position: absolute; /* Posisikan slide secara absolut */
+    top: 0; /* Atur posisi atas */
+    left: 0; /* Atur posisi kiri */
+}
+
+.hero-slide.active {
+    display: block; /* Tampilkan slide aktif */
+}
+
+/* Media query untuk layar kecil */
+@media (max-width: 768px) {
+    .hero-slide.promo img {
+        max-width: auto; /* Atur tinggi maksimum untuk layar kecil */
+        max-height: 100vh;
+    }
+}
+
+.hero-slide img {
+    width: 100%; /* Mengisi lebar kontainer */
+    height: 100%; /* Mengisi tinggi kontainer */
+    object-fit: cover; /* Memastikan gambar terpotong dengan proporsional */
+}
+
+.hero h1 {
+    font-size: 48px; /* Ukuran font h1 yang lebih besar */
+    margin-bottom: 20px;
+    font-weight: bolder;
+    text-align: left; /* Memastikan teks rata kiri */
+}
+
+.hero p {
+    font-size: 24px; /* Ukuran font p yang lebih kecil dari h1 */
+    margin-bottom: 30px;
+    text-align: left; /* Memastikan teks rata kiri */
+}
+
+.cta-button {
+    background-color: #00c853; /* Warna tombol CTA */
+    color: #fff; /* Warna teks tombol */
+    font-weight: 600; /* Menambah ketebalan huruf */
+    padding: 10px 15px; /* Padding untuk tombol */
+    border-radius: 5px; /* Sudut melengkung */
+    text-decoration: none; /* Menghapus garis bawah */
+    display: inline-block; /* Agar tombol tidak mengambil seluruh lebar */
+    font-size: 18px; /* Ukuran font tombol yang lebih besar */
+    margin-left: 0px; /* Margin kiri untuk posisi tombol */
+    transition: background-color 0.3s; /* Transisi untuk hover */
+    border: none; /* Menghapus border */
+    outline: none; /* Menghapus outline saat tombol dalam fokus */
+}
+
+.cta-button:focus {
+    outline: none; /* Menghapus outline saat tombol dalam fokus */
+}
+
+.cta-button:hover {
+    background-color: #218838; /* Warna tombol saat hover */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh; /* Atur tinggi hero menjadi 80% dari tinggi viewport */
+    }
+
+    .hero-content {
+        width: 60%; /* Lebar konten menjadi 50% */
+        padding: 10px; /* Mengurangi padding untuk konten */
+        margin-left: 20px; /* Geser konten sedikit ke kiri */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Ukuran font h1 lebih kecil */
+    }
+
+    .hero p {
+        font-size: 20px; /* Ukuran font p lebih kecil */
+    }
+
+    .cta-button {
+        font-size: 14px; /* Ukuran font tombol lebih kecil */
+        padding: 8px 10px; /* Mengurangi padding tombol */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content {
+        margin-left: 15px; /* Geser konten sedikit ke kiri pada ponsel sangat kecil */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Ukuran font h1 lebih kecil untuk ponsel sangat kecil */
+        font-weight: bolder;
+    }
+
+    .hero p {
+        font-size: 20px; /* Ukuran font p lebih kecil untuk ponsel sangat kecil */
+    }
+
+    .cta-button {
+        font-size: 14px; /* Ukuran font tombol lebih kecil untuk ponsel sangat kecil */
+        padding: 8px 10px; /* Mengurangi padding tombol */
+        font-weight: bold;
+    }
+}
+
+.section {
+    padding: 20px; /* Mengurangi padding menjadi 20px */
+    margin: 0; /* Menghapus margin untuk memastikan tidak ada jarak tambahan */
+    text-align: center; /* Memusatkan teks */
+    background-color: #3F47CC; /* Warna latar belakang section */
+    border-radius: 10px; /* Sudut melengkung untuk section */
+    width: 100%;
+}
+
+.kenapa-kami {
+    padding: 20px; /* Tambahkan padding untuk ruang di sekitar konten */
+}
+
+.container {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    flex-direction: column; /* Default ke kolom untuk perangkat kecil */
+}
+
+.image-container, .content-container {
+    flex: 1; /* Membuat kedua kontainer memiliki ukuran yang sama */
+    padding: 10px; /* Tambahkan padding untuk ruang di dalam kontainer */
+    background-color: #3F47CC; /* Warna latar belakang transparan */
+    border-radius: 8px; /* Tambahkan sudut melengkung */
+}
+
+.image-container img {
+    max-width: 100%; /* Pastikan gambar tidak melebar */
+    height: auto; /* Menjaga rasio aspek gambar */
+}
+
+.content {
+    text-align: left; /* Rata kiri untuk konten */
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Ubah ke baris untuk perangkat besar */
+    }
+}
+
+.illustration {
+    width: 10cm; /* Mengatur lebar gambar */
+    height: auto; /* Memastikan tinggi gambar proporsional */
+    margin-right: 5cm; /* Memberikan jarak antara teks dan gambar */
+}
+
+.kenapa-kami h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.kenapa-kami p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.kenapa-kami ul {
+    font-size: 18px;
+    text-align: left; /* Rata kiri teks */
+}
+
+.read-more {
+    font-size: 20px; /* Ukuran font lebih besar */
+    margin-top: 20px; /* Jarak dari atas */
+    font-weight: bold; /* Menebalkan teks */
+    cursor: pointer; /* Menunjukkan bahwa ini bisa diklik */
+    color: #fbff00; /* Warna teks yang menarik */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+.dropdown-content {
+    display: none; /* Sembunyikan konten dropdown secara default */
+    overflow: hidden;
+    padding: 10px; /* Anda bisa menyesuaikan padding ini */
+    margin-top: 0; /* Jarak atas yang lebih kecil */
+    margin-bottom: 0; /* Pastikan tidak ada jarak bawah */
+    color: #333; /* Warna teks dalam dropdown */
+}
+
+.dropdown-toggle {
+    cursor: pointer; /* Ubah kursor saat hover */
+    background-color: #fbff00; /* Warna latar belakang untuk judul dropdown */
+    color: #333; /* Warna teks untuk judul dropdown */
+    padding: 10px;
+    border: 1px solid #ccc; /* Border untuk judul */
+    border-radius: 5px; /* Bulatkan sudut */
+    margin-bottom: 0; /* Pastikan tidak ada jarak bawah */
+    width: 100%; /* Pastikan dropdown toggle memenuhi lebar kontainer */
+    overflow: hidden; /* Sembunyikan teks yang tidak muat */
+}
+
+.dropdown-toggle h2 {
+    display: block; /* Membuat h2 menjadi block agar bisa membungkus teks */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+.dropdown-toggle:hover {
+    background-color: #fbff50; /* Warna saat hover */
+}
+
+/* Mengatur warna h2 di luar dropdown-content tetap hitam */
+.section h2 {
+    color: rgb(252, 251, 251); /* Mengubah warna teks menjadi putih */
+}
+
+.arrow {
+    margin-left: 10px; /* Jarak antara teks dan panah */
+    transition: transform 0.3s; /* Transisi untuk efek perubahan arah */
+}
+
+/* Tambahkan kelas untuk panah yang mengarah ke atas */
+.dropdown-toggle.active .arrow {
+    transform: rotate(180deg); /* Memutar panah 180 derajat */
+}
+
+/* Mengatur warna teks di dalam dropdown-content menjadi putih */
+.dropdown-content p,
+.dropdown-content h3 {
+    color: white; /* Mengubah warna teks menjadi putih */
+}
+
+/* Mengatur warna teks di dalam .row tetap hitam */
+.dropdown-content .row p,
+.dropdown-content .row h3 {
+    color: black; /* Mengubah warna teks di dalam .row menjadi hitam */
+}
+
+/* Mengatur warna h2 di dalam dropdown-toggle tetap hitam */
+.dropdown-toggle {
+    color: black !important; /* Warna teks untuk dropdown toggle */
+}
+
+/* Pastikan h2 di dalam dropdown-content tidak ada */
+.dropdown-content h2 {
+    display: none; /* Menyembunyikan h2 jika ada di dalam dropdown-content */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 576px) {
+    .dropdown-toggle {
+        font-size: 12px; /* Ukuran font yang lebih kecil untuk perangkat kecil */
+        padding: 8px; /* Kurangi padding untuk perangkat kecil */
+    }
+}
+
+.dropdown-toggle {
+    cursor: pointer; /* Ubah kursor saat hover */
+    background-color: #fbff00; /* Warna latar belakang untuk judul dropdown */
+    color: #333; /* Warna teks untuk judul dropdown */
+    padding: 10px; /* Padding untuk judul */
+    border: 1px solid #ccc; /* Border untuk judul */
+    border-radius: 5px; /* Bulatkan sudut */
+    margin-bottom: 0px; /* Mengurangi jarak bawah menjadi 5px */
+    width: 100%; /* Pastikan dropdown toggle memenuhi lebar kontainer */
+}
+
+.dropdown-content {
+    display: none; /* Sembunyikan konten dropdown secara default */
+    overflow: hidden;
+    padding: 10px; /* Anda bisa menyesuaikan padding ini */
+    margin-top: 0; /* Jarak atas yang lebih kecil */
+    margin-bottom: 0px; /* Mengurangi jarak bawah menjadi 5px */
+    color: #333; /* Warna teks dalam dropdown */
+    padding-left: 15px; /* Tambahkan padding kiri untuk memberi ruang */
+    word-wrap: break-word; /* Memecah kata yang terlalu panjang */
+    overflow-wrap: break-word; /* Memecah kata yang terlalu panjang */
+}
+
+.info-box {
+    width: 15cm; /* Lebar kotak 15 cm */
+    border-radius: 5px; /* Sudut yang membulat */
+    padding: 0; /* Mengatur padding menjadi 0 untuk menghilangkan jarak di dalam kotak */
+    margin: 10px auto; /* Margin atas/bawah 10px dan auto untuk kiri/kanan */
+    color: #ffffff; /* Warna teks di dalam kotak */
+    text-align: center; /* Menengahkan teks di dalam kotak */
+}
+
+.info-box p, /* Mengatur elemen p di dalam info-box */
+.info-box h3 { /* Jika ada h3 di dalam info-box */
+    margin: 0; /* Menghilangkan margin untuk elemen p dan h3 */
+    padding: 0; /* Menghilangkan padding untuk elemen p dan h3 */
+}
+
+
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.section p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+article, section {
+    padding-top: 70px; /* Jarak dari atas untuk menghindari tertutup header */
+    width: 100%; /* Memastikan lebar 100% */
+    margin: 0; /* Menghapus margin untuk memastikan tidak ada jarak di sisi */
+    box-sizing: border-box; /* Agar padding dihitung dalam lebar total */
+}
+
+/* Jika Anda ingin mengatur margin untuk elemen tertentu */
+section {
+    padding: 20px; /* Sesuaikan padding jika perlu */
+}
+@media (max-width: 576px) {
+    .custom-article {
+        padding-top: 25px; /* Jarak atas untuk article */
+    }
+    
+    section {
+        padding-top: 20px; /* Sesuaikan padding untuk section jika perlu */
+    }
+}
+/* Tambahkan ini untuk memastikan semua elemen menggunakan box-sizing border-box */
+*, *::before, *::after {
+    box-sizing: inherit; /* Mengatur box-sizing untuk semua elemen */
+}
+
+.tutor-features {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    flex-wrap: wrap; /* Memungkinkan kartu untuk membungkus ke baris berikutnya */
+    justify-content: center; /* Memusatkan kartu secara horizontal */
+    gap: 3cm; /* Jarak antar kartu */
+    padding-top: 30px; /* Menambahkan padding atas untuk menurunkan semua kartu */
+    margin: 0 50px; /* Menambahkan margin kiri dan kanan untuk memberikan jarak 50px */
+    align-items: flex-start; /* Menyelaraskan kartu ke atas */
+}
+
+.tutor-feature {
+    background-color: #ffffff; /* Warna latar belakang putih untuk kartu */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Menambahkan efek drop shadow */
+    padding: 10px; /* Mengurangi padding di dalam kartu */
+    text-align: center; /* Memusatkan teks di dalam kartu */
+    transition: transform 0.2s; /* Menambahkan efek transisi saat hover */
+    position: relative; /* Agar elemen di dalam kartu dapat diposisikan relatif */
+    margin: 0; /* Menghapus margin agar tidak ada jarak tambahan */
+    width: 250px; /* Mengatur lebar kartu */
+    box-sizing: border-box; /* Memastikan padding dan margin dihitung dalam lebar */
+    display: flex; /* Menggunakan flexbox untuk kartu */
+    flex-direction: column; /* Mengatur arah konten ke kolom */
+    justify-content: space-between; /* Memastikan jarak yang sama antara elemen */
+    min-height: 250px; /* Menetapkan tinggi minimum untuk semua kartu */
+}
+
+/* Pastikan untuk menghapus margin bawah pada kartu */
+.tutor-feature {
+    margin-bottom: 0; /* Menghapus margin bawah */
+}
+
+.tutor-feature h3 {
+    font-size: 20px; /* Ukuran font untuk judul */
+    margin: 0; /* Menghapus margin untuk judul */
+    font-weight: bold; /* Membuat judul lebih tebal */
+    background-color: #69e6c2; /* Warna kotak di belakang judul */
+    color: #000000; /* Warna teks judul */
+    padding: 15px; /* Menambahkan padding di dalam kotak */
+    position: absolute; /* Mengubah posisi menjadi absolute */
+    top: 0; /* Menempel pada bagian atas kartu */
+    left: 0; /* Menempel pada sisi kiri kartu */
+    right: 0; /* Menempel pada sisi kanan kartu */
+    border-radius: 10px 10px 0 0; /* Membuat sudut atas melengkung */
+    box-sizing: border-box; /* Memastikan padding dihitung dalam lebar */
+}
+
+.tutor-feature ul {
+    list-style: none; /* Menghapus bullet point */
+    padding: 10px; /* Padding untuk isi daftar */
+    text-align: left; /* Rata kiri teks */
+    margin-top: 60px; /* Memberikan ruang di atas untuk judul yang tetap */
+    font-size: medium; /* Ukuran font untuk isi daftar */
+    font-weight: 500; /* Menetapkan ketebalan font untuk isi daftar */
+}
+
+.tutor-feature ul li {
+    margin-bottom: 10px; /* Jarak antar item dalam daftar */
+    color: #000000;
+    word-wrap: break-word; /* Memastikan teks panjang terputus dan tidak melampaui batas */
+}
+
+.tutor-feature:hover {
+    transform: translateY(-10px); /* Efek hover untuk mengangkat kartu */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .tutor-feature {
+        width: calc(50% - 20px); /* 2 kartu per baris pada layar kecil */
+        min-height: auto; /* Menetapkan tinggi minimum untuk kartu pada layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .tutor-feature {
+        width: 100%; /* 1 kartu per baris pada layar sangat kecil */
+        min-height: auto; /* Menetapkan tinggi minimum untuk kartu pada layar sangat kecil */
+    }
+
+    .tutor-feature h3 {
+        font-size: 18px; /* Mengurangi ukuran font judul pada layar kecil */
+    }
+
+    .tutor-feature ul {
+        margin-top: 20px; /* Mengurangi margin atas untuk daftar pada layar kecil */
+    }
+}
+
+.features {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    flex-wrap: wrap; /* Memungkinkan kartu untuk membungkus ke baris berikutnya */
+    justify-content: center; /* Memusatkan kartu secara horizontal */
+    gap: 20px; /* Jarak antar kartu */
+    padding-top: 30px; /* Menambahkan padding atas untuk menurunkan semua kartu */
+    margin: 0 50px; /* Menambahkan margin kiri dan kanan untuk memberikan jarak 50px */
+}
+
+.feature {
+    background-color: #ffffff; /* Warna latar belakang putih untuk kartu */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan efek drop shadow */
+    padding: 20px; /* Padding di dalam kartu */
+    text-align: center; /* Memusatkan teks di dalam kartu */
+    transition: transform 0.2s; /* Menambahkan efek transisi saat hover */
+    position: relative; /* Agar elemen di dalam kartu dapat diposisikan relatif */
+    margin: 0 5px; /* Menghapus margin agar tidak ada jarak tambahan */
+    width: 8cm; /* Mengatur lebar kartu menjadi 8cm */
+    box-sizing: border-box; /* Memastikan padding dan margin dihitung dalam lebar */
+    display: flex; /* Menggunakan flexbox untuk kartu */
+    flex-direction: column; /* Mengatur arah konten ke kolom */
+    justify-content: flex-start; /* Mengatur agar konten berada di atas */
+    min-height: 200px; /* Mengatur tinggi minimum agar tidak terlalu tinggi */
+}
+
+.feature h3 {
+    font-size: 20px; /* Ukuran font untuk judul */
+    margin: 0; /* Menghapus margin untuk judul */
+    font-weight: bold; /* Membuat judul lebih tebal */
+    background-color: #69e6c2; /* Warna kotak di belakang judul */
+    color: #000000; /* Warna teks judul */
+    padding: 20px; /* Menambahkan padding di dalam kotak */
+    position: absolute; /* Mengubah posisi menjadi absolute */
+    top: 0; /* Menempel pada bagian atas kartu */
+    left: 0; /* Menempel pada sisi kiri kartu */
+    right: 0; /* Menempel pada sisi kanan kartu */
+    border-radius: 10px 10px 0 0; /* Membuat sudut atas melengkung */
+    box-sizing: border-box; /* Memastikan padding dihitung dalam lebar */
+}
+
+.feature ul {
+    list-style: disc; /* Menghapus bullet point */
+    padding: 10px; /* Padding untuk isi daftar */
+    text-align: left; /* Rata kiri teks */
+    margin-top: 60px; /* Memberikan ruang di atas untuk judul yang tetap */
+    font-size: medium; /* Ukuran font untuk isi daftar */
+    font-weight: 500; /* Menetapkan ketebalan font untuk isi daftar */
+    padding-left: 15px;
+}
+
+.feature ul li {
+    margin-bottom: 0px; /* Atur jarak antar item menjadi 5px */
+    color: #000000; /* Warna teks */
+    word-wrap: break-word; /* Memastikan teks panjang terputus dan tidak melampaui batas */
+}
+
+.feature:hover {
+    transform: translateY(-10px); /* Efek hover untuk mengangkat kartu */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .feature {
+        width: calc(50% - 20px); /* 2 kartu per baris pada layar kecil */
+        min-height: 250px; /* Menetapkan tinggi minimum untuk kartu pada layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .feature {
+        width: 100%; /* 1 kartu per baris pada layar sangat kecil */
+        min-height: 200px; /* Menetapkan tinggi minimum untuk kartu pada layar sangat kecil */
+    }
+
+    .feature h2 {
+        margin-bottom: 0px;
+    }
+
+    .feature h3 {
+        font-size: 18px; /* Mengurangi ukuran font judul pada layar kecil */
+    }
+
+    .feature ul {
+        margin-top: 50px; /* Mengurangi margin atas untuk daftar pada layar kecil */
+    }
+}
+
+/* Mengatur posisi tetap untuk tombol "CHAT US" */
+.fixed-chat {
+    position: fixed;
+    bottom: 30px; /* Jarak dari bawah */
+    right: 30px; /* Jarak dari kanan */
+    background-color: #00c853;
+    color: #ffffff; /* Warna teks tombol chat */
+    padding: 15px; /* Padding untuk tombol chat */
+    border-radius: 25px; /* Membuat tombol menjadi bulat */
+    text-decoration: none; /* Menghapus garis bawah */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    z-index: 1000; /* Memastikan tombol di atas elemen lain */
+    width: 175px; /* Lebar tombol */
+    height: 65px; /* Tinggi tombol */
+    display: flex; /* Menggunakan flexbox untuk memusatkan ikon */
+    align-items: center; /* Memusatkan ikon secara vertikal */
+    justify-content: center; /* Memusatkan ikon secara horizontal */
+    font-size: 16px; /* Ukuran font default */
+}
+
+.fixed-chat img {
+    width: 50px; /* Ukuran ikon WhatsApp */
+    height: 50px; /* Ukuran ikon WhatsApp */
+}
+
+.fixed-chat:hover {
+    background-color: #218838; /* Warna saat hover */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .fixed-chat {
+        width: 150px; /* Lebar tombol lebih kecil untuk layar ponsel */
+        height: 50px; /* Tinggi tombol lebih kecil */
+        padding: 10px; /* Mengurangi padding */
+        bottom: 20px; /* Mengurangi jarak dari bawah */
+        right: 20px; /* Mengurangi jarak dari kanan */
+        font-size: 14px; /* Ukuran font lebih kecil untuk layar ponsel */
+        margin-left: auto;
+    }
+
+    .fixed-chat img {
+        width: 40px; /* Ukuran ikon WhatsApp lebih kecil */
+        height: 40px; /* Ukuran ikon WhatsApp lebih kecil */
+    }
+}
+
+@media (max-width: 576px) {
+    .fixed-chat {
+        width: 130px; /* Lebar tombol lebih kecil untuk ponsel sangat kecil */
+        height: 45px; /* Tinggi tombol lebih kecil */
+        padding: 8px; /* Mengurangi padding lebih lanjut */
+        bottom: 15px; /* Mengurangi jarak dari bawah */
+        right: 15px; /* Mengurangi jarak dari kanan */
+        font-size: 12px; /* Ukuran font lebih kecil untuk ponsel sangat kecil */
+    }
+
+    .fixed-chat img {
+        width: 35px; /* Ukuran ikon WhatsApp lebih kecil */
+        height: 35px; /* Ukuran ikon WhatsApp lebih kecil */
+    }
+}
+
+.custom-btn {
+    background-color: #21ffe9; /* Warna latar belakang */
+    border-color: #21ffe9; /* Warna border */
+    color: rgb(0, 0, 0); /* Warna teks menjadi hitam */
+    font-size: 1rem; /* Ukuran teks (16px) */
+    font-weight: 600; /* Menambah ketebalan huruf (600 adalah semi-bold) */
+    padding: 10px 10px; /* Padding untuk tombol */
+    border-radius: 5px; /* Sudut membulat */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Efek transisi */
+    display: inline-block; /* Memastikan tombol tidak mengambil lebar penuh */
+    margin-top: 15px;
+}
+
+/* Efek hover */
+.custom-btn:hover {
+    background-color: rgb(87, 107, 255); /* Warna saat hover */
+    border-color: rgb(87, 107, 255); /* Warna border saat hover */
+}
+
+/* Media query untuk ukuran layar kecil */
+@media (max-width: 600px) {
+    .custom-btn {
+        font-size: 1.125rem; /* Ukuran font lebih besar (18px) */
+        padding: 5px; /* Mengatur padding agar lebih seimbang */
+        width: 30%; /* Mengatur lebar tombol menjadi 30% */
+        box-sizing: border-box; /* Memastikan padding termasuk dalam lebar */
+        display: block; /* Mengatur tombol menjadi block agar lebar lebih konsisten */
+        margin: 0 auto; /* Memusatkan tombol secara horizontal */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-btn {
+        font-size: 1rem; /* Ukuran font 1rem (sekitar 16px) */
+        padding: 5px; /* Mengatur padding agar lebih seimbang */
+        width: 35%; /* Mengatur lebar tombol menjadi 40% */
+        box-sizing: border-box; /* Memastikan padding termasuk dalam lebar */
+        display: block; /* Mengatur tombol menjadi block agar lebar lebih konsisten */
+        margin: 0 auto; /* Memusatkan tombol secara horizontal */
+        font-weight: bold; /* Mengatur tulisan menjadi lebih tebal */
+    }
+}
+
+.learning-system {
+    padding: 60px 20px; /* Padding untuk section */
+    text-align: center; /* Memusatkan teks */
+    margin-bottom: 5cm; /* Jarak antar section menjadi 5cm */
+}
+
+.learning-system .row {
+    display: flex; /* Menggunakan flexbox untuk baris */
+    justify-content: center; /* Memusatkan konten dalam baris */
+    gap: 20px; /* Jarak antar kotak */
+}
+
+.learning-system .box {
+    background-color: #ffffff; /* Warna latar belakang putih untuk kartu */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+    padding: 20px; /* Padding di dalam kartu */
+    width: 300px; /* Mengatur lebar kartu agar muat 3 dalam satu baris */
+    text-align: center; /* Memusatkan teks di dalam kartu */
+    transition: transform 0.2s; /* Menambahkan efek transisi saat hover */
+    position: relative; /* Agar gambar dapat diposisikan relatif */
+    border: 1px solid #e0e0e0; /* Tambahkan border untuk kotak */
+}
+
+.learning-system .box:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.learning-system h3 {
+    margin-top: 10px; /* Jarak atas untuk judul */
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.learning-system p {
+    margin-top: 10px; /* Jarak atas untuk paragraf */
+    font-size: 18px;
+}
+
+.flexible-groups {
+    padding: 60px 20px; /* Padding untuk section */
+    text-align: center; /* Memusatkan teks */
+    margin-bottom: 5cm; /* Jarak antar section menjadi 5cm */
+}
+
+.flexible-groups .row {
+    display: flex; /* Menggunakan flexbox untuk baris */
+    justify-content: center; /* Memusatkan konten dalam baris */
+    gap: 20px; /* Jarak antar kotak */
+}
+
+.flexible-groups .box {
+    background-color: #ffffff; /* Warna latar belakang putih untuk kartu */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+    padding: 20px; /* Padding di dalam kartu */
+    width: 300px; /* Mengatur lebar kartu agar muat 3 dalam satu baris */
+    text-align: center; /* Memusatkan teks di dalam kartu */
+    transition: transform 0.2s; /* Menambahkan efek transisi saat hover */
+    position: relative; /* Agar gambar dapat diposisikan relatif */
+    border: 1px solid #e0e0e0; /* Tambahkan border untuk kotak */
+}
+
+.flexible-groups .box:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.flexible-groups h3 {
+    margin-top: 10px; /* Jarak atas untuk judul */
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.flexible-groups p {
+    margin-top: 10px; /* Jarak atas untuk paragraf */
+    font-size: 18px;
+}
+
+.section {
+    padding: 10px; /* Mengurangi padding menjadi 10px */
+    margin: 0; /* Menghapus margin untuk memastikan tidak ada jarak tambahan */
+    text-align: center; /* Memusatkan teks */
+    background-color: #3F47CC; /* Warna latar belakang section */
+    border-radius: 10px; /* Sudut melengkung untuk section */
+    width: 100%;
+}
+
+/* Tambahkan ini untuk mengatur jarak antara section */
+.section + .section {
+    margin-top: 10px; /* Mengurangi jarak antara section menjadi 10px */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .section {
+        margin-bottom: 0px; /* Mengurangi jarak antar section menjadi 5px pada layar kecil */
+    }
+    .pricing + .section {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    #biaya-terjangkau + .section {
+            margin-top: 0px !important; /* Atur jarak antara Biaya Terjangkau dan section berikutnya */
+    }
+    .section + .section {
+        margin-top: 0px; /* Mengurangi jarak antara section menjadi 10px */
+        margin-bottom: 0px; /* Mengurangi jarak antara section menjadi 10px */
+
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        margin-bottom: 0px; /* Mengurangi jarak antar section menjadi 2px pada layar sangat kecil */
+    }
+    .pricing + .section {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    #biaya-terjangkau + .section {
+        margin-top: 0px !important; /* Atur jarak antara Biaya Terjangkau dan section berikutnya */
+}
+    .section + .section {
+        margin-top: 0px; /* Mengurangi jarak antara section menjadi 10px */
+        margin-bottom: 0px; /* Mengurangi jarak antara section menjadi 10px */
+
+    }
+}
+
+.tutors {
+    display: flex; /* Menggunakan Flexbox untuk penataan */
+    justify-content: center; /* Memusatkan konten secara horizontal */
+    align-items: center; /* Memusatkan konten secara vertikal */
+    background-color: #ffffff; /* Warna latar belakang putih */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+    margin: 0; /* Margin untuk jarak antara section */
+}
+
+.tutors-content {
+    text-align: center; /* Memusatkan teks */
+    padding: 20px; /* Menambahkan padding untuk ruang di sekitar konten */
+}
+
+.tutors-content h2 {
+    font-size: 32px; /* Ukuran font untuk judul */
+    color: #3F47CC; /* Warna judul */
+    margin-bottom: 20px; /* Jarak bawah untuk judul */
+}
+
+.tutors-content p {
+    font-size: 20px; /* Ukuran font untuk paragraf */
+    margin-bottom: 30px; /* Jarak bawah untuk paragraf */
+    color: #333; /* Warna teks */
+}
+
+.tutor {
+    background: linear-gradient(to bottom, #f0f0f0, #ffffff); /* Degradasi dari abu-abu ke putih */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan yang lebih jelas */
+    color: #333; /* Warna teks dalam kartu tutor */
+    padding: 20px; /* Padding di dalam kartu */
+    width: 300px; /* Mengatur lebar kartu agar muat 3 dalam satu baris */
+    text-align: center; /* Memusatkan teks di dalam kartu */
+    transition: transform 0.2s; /* Menambahkan efek transisi saat hover */
+    margin-bottom: 50px; /* Jarak antar kartu 5 cm (50px) */
+}
+
+.tutor:hover {
+    transform: translateY(-5px); /* Efek hover untuk mengangkat kartu */
+}
+
+.tutor img {
+    width: 100%; /* Memastikan gambar memenuhi lebar kartu */
+    height: auto; /* Memastikan tinggi gambar otomatis */
+    border-radius: 10px; /* Sudut melengkung pada gambar */
+}
+
+.container {
+    display: flex; /* Menggunakan flexbox untuk kontainer */
+    justify-content: center; /* Memusatkan konten secara horizontal */
+    flex-wrap: wrap; /* Membungkus elemen jika diperlukan */
+}
+
+.testimonials .row {
+    display: flex; /* Menggunakan flexbox untuk baris */
+    justify-content: center; /* Memusatkan kartu dalam baris */
+    flex-wrap: wrap; /* Membungkus kartu jika diperlukan */
+    align-items: center;
+}
+
+.testimonials .testimonial {
+    position: relative; /* Memungkinkan posisi relatif untuk efek hover */
+    overflow: hidden; /* Menyembunyikan elemen yang melampaui batas */
+    text-align: center; /* Memusatkan teks di dalam kartu */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek hover */
+    margin: 20px; /* Jarak antar gambar */
+    border: 1px solid #e0e0e0; /* Tambahkan border untuk kartu */
+    border-radius: 10px; /* Sudut melengkung pada kartu */
+    background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang kartu testimoni */
+    color: #333; /* Warna teks dalam kartu testimoni */
+    width: 8cm; /* Lebar tetap untuk kartu */
+    height: auto; /* Tinggi tetap untuk kartu */
+}
+
+.testimonials .testimonial:hover {
+    transform: scale(1.05); /* Membesarkan gambar sedikit saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambah bayangan saat hover */
+}
+
+.testimonials .testimonial-img {
+    max-width: 100%; /* Memastikan gambar memenuhi lebar kolom */
+    height: auto; /* Memastikan tinggi gambar otomatis */
+    border-radius: 10px; /* Sudut melengkung pada gambar */
+}
+
+.testimonials .testimonial-title {
+    margin-top: 10px; /* Jarak atas untuk judul */
+    font-size: 18px; /* Ukuran font judul */
+    font-weight: bold; /* Membuat judul lebih tebal */
+    color: #333; /* Warna teks judul */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 1200px) {
+    .testimonials .testimonial {
+        width: 7cm; /* Mengurangi lebar kartu pada layar kecil */
+        height: 14cm; /* Mengurangi tinggi kartu pada layar kecil */
+    }
+}
+
+@media (max-width: 992px) {
+    .testimonials .testimonial {
+        width: 6cm; /* Mengurangi lebar kartu pada layar lebih kecil */
+        height: 12cm; /* Mengurangi tinggi kartu pada layar lebih kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials .testimonial {
+        width: 5cm; /* Mengurangi lebar kartu pada layar lebih kecil */
+        height: 10cm; /* Mengurangi tinggi kartu pada layar lebih kecil */
+    }
+
+    .testimonials .testimonial-title {
+        font-size: 16px; /* Mengurangi ukuran font judul pada layar kecil */
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonials .testimonial {
+        width: 4cm; /* Mengurangi lebar kartu pada layar lebih kecil */
+        height: 8cm; /* Mengurangi tinggi kartu pada layar lebih kecil */
+        align-items: center;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Membuat wrapper memiliki tinggi minimal 100% dari viewport */
+    overflow-x: hidden; /* Pastikan tidak ada overflow horizontal */
+}
+
+.content {
+    flex: 1; /* Membuat konten mengambil ruang yang tersedia */
+}
+
+.footer {
+    background-color: #c3ccd6; /* Warna latar belakang footer */
+    color: #333; /* Warna teks dalam footer */
+    padding: 20px; /* Spasi dalam footer */
+    width: 100%; /* Memastikan footer memenuhi lebar penuh */
+    position: relative; /* Agar footer dapat diposisikan dengan benar */
+    left: 0; /* Menempel pada sisi kiri */
+    right: 0; /* Menempel pada sisi kanan */
+    margin: 0; /* Menghapus margin */
+    box-sizing: border-box; /* Menghitung padding dalam lebar total */
+    padding-right: 200px;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: space-between; /* Memisahkan konten ke kiri dan kanan */
+    align-items: center; /* Memusatkan konten secara vertikal */
+}
+
+.copyright {
+    margin: 0; /* Menghapus margin default */
+}
+
+.social-media {
+    display: flex; /* Menggunakan flexbox untuk ikon media sosial */
+}
+
+.social-icon {
+    width: 30px; /* Ukuran ikon */
+    height: 30px; /* Ukuran ikon */
+    margin-left: 10px; /* Spasi di antara ikon */
+    transition: transform 0.2s; /* Transisi untuk efek hover */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Membesarkan ikon saat hover */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    body {
+        margin: 10px; /* Mengurangi margin untuk ponsel */
+    }
+
+    .kenapa-kami h2 {
+        font-size: 24px; /* Ukuran font h2 lebih kecil */
+    }
+
+    .kenapa-kami p {
+        font-size: 18px; /* Ukuran font p lebih kecil */
+    }
+
+    .flexible-groups .box,
+    .learning-system .box {
+        width: 90%; /* Mengatur lebar kotak menjadi 90% */
+        margin: 10px 0; /* Jarak antar kotak */
+    }
+
+    .feature {
+        width: 100%; /* Mengatur lebar kartu menjadi 100% */
+        min-height: 200px; /* Menetapkan tinggi minimum untuk kartu */
+    }
+
+    .testimonials .testimonial {
+        width: auto; /* Mengatur lebar kartu testimoni menjadi 90% */
+        height: auto; /* Mengatur tinggi otomatis */
+        align-items: center;
+    }
+
+    .footer {
+        padding: 10px; /* Mengurangi padding footer */
+        padding-right: 150px;
+        font-size: 12px;
+
+    }
+
+    .social-icon {
+        width: 25px; /* Ukuran ikon sosial media lebih kecil */
+        height: 25px; /* Ukuran ikon sosial media lebih kecil */
+    }
+}
+
+@media (max-width: 576px) {
+    
+    .section h2 {
+        font-size: 24px; /* Ukuran font h2 lebih kecil untuk ponsel sangat kecil */
+    }
+
+    .section p {
+        font-size: 18px; /* Ukuran font p lebih kecil untuk ponsel sangat kecil */
+    }
+    .footer {
+        padding: 10px; /* Mengurangi padding footer */
+        padding-right: 150px;
+        font-size: 10px;
+    }
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Menyembunyikan overflow horizontal */
+    box-sizing: border-box; /* Mengatur box-sizing untuk seluruh dokumen */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Membuat wrapper memiliki tinggi minimal 100% dari viewport */
+}
+
+.section {
+    margin-bottom: 5cm; /* Jarak antar section menjadi 5cm */
+}
+
+.info-box {
+    width: 15cm; /* Lebar kotak 15 cm */
+    border-radius: 5px; /* Sudut yang membulat */
+    padding: 0; /* Mengatur padding menjadi 0 untuk menghilangkan jarak di dalam kotak */
+    margin: 10px auto; /* Margin atas/bawah 10px dan auto untuk kiri/kanan */
+    color: #ffffff; /* Warna teks di dalam kotak */
+    text-align: center; /* Menengahkan teks di dalam kotak */
+}
+
+.info-box p, /* Mengatur elemen p di dalam info-box */
+.info-box h3 { /* Jika ada h3 di dalam info-box */
+    margin: 0; /* Menghilangkan margin untuk elemen p dan h3 */
+    padding: 0; /* Menghilangkan padding untuk elemen p dan h3 */
+}
+
+/* Tambahan untuk responsivitas */
+@media (max-width: 768px) {
+    .info-box {
+        width: 90%; /* Lebar 90% pada layar kecil */
+    }
+}
+
+
+/* Mengatur jarak antara section */
+.section + .section {
+    margin-top: 10px; /* Jarak default antara section */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .section {
+        margin-bottom: 0; /* Menghapus margin bawah untuk semua section */
+    }
+    #biaya-terjangkau + .section {
+        margin-top: 0 !important; /* Mengatur jarak antara Biaya Terjangkau dan section berikutnya */
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        margin-bottom: 0; /* Menghapus margin bawah untuk semua section */
+    }
+    #biaya-terjangkau + .section {
+        margin-top: 0 !important; /* Mengatur jarak antara Biaya Terjangkau dan section berikutnya */
+    }
+}
